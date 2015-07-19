@@ -9,7 +9,7 @@ void print(int arr[],int n)
         printf("\n");
     }
 }
-int merge(int arr[],int start,int mid,int end)
+void merge(int arr[],int start,int mid,int end)
 {
     int i,j,k;
     int n1=mid-start+1;
@@ -54,18 +54,24 @@ int merge(int arr[],int start,int mid,int end)
 
 }
 
-int mergesort(int arr[],int start,int end)
+void mergesort(int arr[],int start,int end)
 {
-    int mid=(start+end)/2;
-    if(mid==0)
-        return 1;
+    if(start < end)
+    {
+
+    int mid=start+(end-1)/2;
+
     mergesort(arr,start,mid);
     mergesort(arr,mid+1,end);
     merge(arr,start,mid,end);
+
+    }
 }
 int main()
 {
     int arr[10]={52,21,41,5,28,78,6,89,52,22};
     print(arr,10);
-    mergesort(arr,0,10);
+    mergesort(arr,0,9);
+    //merge(arr,0,4,9);
+    print(arr,10);
 }
