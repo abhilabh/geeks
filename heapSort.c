@@ -48,6 +48,7 @@ void buildHeap(int arr[],int size)
 void heapSort(int arr[],int n)
 {
     int i;
+      buildHeap(arr,9);
     for(i=n-1;i>0;i--)
     {
         int temp;
@@ -64,7 +65,7 @@ int main()
     int arr[9]={24,26,5,74,4,14,44,18,29},i;
 
     print_arr(arr,9);
-    buildHeap(arr,9);
+  //  buildHeap(arr,9);
     heapSort(arr,9);
     print_arr(arr,9);
 
